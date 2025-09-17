@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Agendas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-800">Mis Agendas</h1>
+            <div>
+                <span id="user-email" class="text-sm text-gray-600 mr-4"></span>
+                <button id="logout-button" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Cerrar Sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-lg font-semibold mb-4">Crear Nueva Agenda</h2>
+            <form id="add-agenda-form" class="flex gap-4">
+                <input type="text" id="agenda-title-input" placeholder="Título de la nueva agenda" required class="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500">
+                <button type="submit" class="py-2 px-4 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700">Crear</button>
+            </form>
+        </div>
+
+        <div id="agendas-list" class="space-y-4">
+            <p class="text-gray-500">Cargando agendas...</p>
+        </div>
+    </main>
+    <script src="env.js"></script>
+    <script src="js/supabaseClient.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
